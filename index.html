@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Currency converter</title>
+</head>
+<body>
+   <header>
+      <img src="/images/logo.svg" alt="logo">
+      <ul class='nav'>
+         <li class='nav-item'>БАНК</li>
+         <li class='nav-item'>БИЗНЕС</li>
+         <li class='nav-item'>ИНВЕСТИЦИИ</li>
+         <li class='nav-item'>СТРАХОВАНИЕ</li>
+         <li class='nav-item'>МОБАЙЛ</li>
+         <li class='nav-item'>ПУТЕШЕСТВИЯ</li>
+         <li class='nav-item'>РАЗВЛЕЧЕНИЯ</li>
+      </ul>
+      <button class='sign-in-button'>ВОЙТИ</button>
+   </header>
+   <main>
+      <h1 class="headline">Конвертер валют онлайн</h1>
+      <div class="converter">
+         <div class="convertable-value">
+            <p class="subtitle">У меня есть</p>
+            <table>
+               <tr>
+                  <td class='rub active-currency'>RUB</td>
+                  <td class='usd'>USD</td>
+                  <td class='eur'>EUR</td>
+                  <td class='gbp'>GBP</td>
+               </tr>
+            </table>
+            <div class="input-value">
+               <input class='input-value-to-convert' value='1' type='number'>
+               <p class="unit-cost-from"></p>
+            </div>
+         </div>
+         <div class="resulting-value">
+            <p class="subtitle">Хочу приобрести</p>
+            <table>
+               <tr>
+                  <td class='to-rub'>RUB</td>
+                  <td class='to-usd active-currency'>USD</td>
+                  <td class='to-eur'>EUR</td>
+                  <td class='to-gbp'>GBP</td>
+               </tr>
+            </table>
+            <div class="input-value">
+               <input class='input-value-converted' type='number'>
+               <p class="unit-cost-to"></p>
+            </div>
+         </div>
+      </div>
+   </main>
+
+   <script src='code.js'></script>
+</body>
+</html>

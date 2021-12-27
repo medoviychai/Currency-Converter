@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Gaegu:wght@300;400;700&family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Kelly+Slab&family=Marmelad&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+
+body {
+   font-family: roboto;
+   margin: 0;
+}
+
+header {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   padding: 9px 102px 8px 100px;
+   background-color: #F5F5F6;
+   margin: 0;
+   height: 50px;
+}
+
+img {
+   width: 89px;
+}
+
+.nav {
+   display: flex;
+   padding: 0;
+}
+
+.nav-item {
+   list-style-type: none;
+   font-weight: 500;
+   color: #959BA4;
+   margin-right: 25px;
+   font-size: 11px;
+}
+
+.nav-item:last-child {
+   margin-right: 124px;
+}
+
+.nav-item:first-child {
+   margin-left: 64px;
+}
+
+.nav-item:hover {
+   color: black;
+   cursor: pointer;
+}
+
+.sign-in-button {
+   font-family: roboto;
+   font-weight: 500;
+   font-size: 11px;
+   background-color: white;
+   border: none;
+   border-radius: 4px;
+   width: 58px;
+   height: 33px;
+}
+
+main {
+   padding: 56px 258px 0 253px;
+}
+
+.convertable-value {
+   margin-right: 123px;
+   width: 259px;
+}
+
+.resulting-value {
+   width: 259px;
+}
+
+.headline {
+   font-weight: 700;
+   font-size: 36px;
+   margin-bottom: 33px;
+}
+
+.converter {
+   display: flex;
+}
+
+.subtitle {
+   font-size: 12px;
+   color: #9F9F9F;
+   margin-bottom: 11px;
+}
+
+table {
+   border-radius: 3px;
+   border-collapse: collapse;
+   margin-bottom: 20px;
+   width: 259px;
+}
+
+td {
+   padding: 8px 20px 9px 21px;
+   border: 1px solid #C6C6C6;
+   color: #C6C6C6;
+   font-size: 12px;
+}
+
+td:hover {
+   background: #833AE0;
+   color: white;
+   cursor: pointer;
+}
+
+.input-value {
+   border: 1px solid #E5E5E5;
+   border-radius: 3px;
+   padding: 11px 14px 5px 14px;
+}
+
+input {
+   font-weight: 700;
+   font-size: 36px;
+   width: 90%;
+   border: none;
+   padding: 0;
+}
+
+.unit-cost-from,
+.unit-cost-to {
+   color: #C6C6C6;
+   font-size: 12px;
+}
+
+.active-currency {
+   background: #833AE0;
+   color: white;
+}
