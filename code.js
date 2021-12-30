@@ -20,13 +20,19 @@ const toUsd = document.querySelector('.to-usd');
 const toEur = document.querySelector('.to-eur');
 const toGbp = document.querySelector('.to-gbp');
 
-
 const unitCostFrom = document.querySelector('.unit-cost-from');
 const unitCostTo = document.querySelector('.unit-cost-to');
 
 const inputFrom = document.querySelector('.input-value-to-convert');
 const inputTo = document.querySelector('.input-value-converted');
 
+function validate(){
+  inputFrom.value = inputFrom.value.replace(/,/g, ".");
+  inputFrom.value = inputFrom.value.replace(/[^\.\d]/g, '');
+
+  inputTo.value = inputTo.value.replace(/,/g, ".");
+  inputTo.value = inputTo.value.replace(/[^\.\d]/g, '');
+}
 
 
 fromRub.addEventListener('click', () => {
@@ -502,7 +508,16 @@ inputFrom.addEventListener('input', (event) => {
          })
    }
 
-
+   // let arr = inputFrom.value.split('');
+   // event.target.addEventListener('change', () => {
+   //    arr.forEach(item => {
+   //       if (item === ',') {
+   //          return item = '.'
+   //       }
+   //    })
+   // })
+   // console.log(arr.join(''));
+   // inputFrom.value = arr.join('')
 
    // fun = function(input) {
    //    input.value = input.value.replace(/[.]/g, ",");

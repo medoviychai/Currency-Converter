@@ -17,6 +17,7 @@ header {
 
 img {
    width: 89px;
+   cursor: pointer;
 }
 
 .nav {
@@ -54,6 +55,7 @@ img {
    border-radius: 4px;
    width: 58px;
    height: 33px;
+   cursor: pointer;
 }
 
 main {
@@ -90,6 +92,7 @@ table {
    border-collapse: collapse;
    margin-bottom: 20px;
    width: 259px;
+   /* border-radius: 4px 0 0 4px; */
 }
 
 td {
@@ -117,6 +120,8 @@ input {
    width: 90%;
    border: none;
    padding: 0;
+   outline:none;
+
 }
 
 .unit-cost-from,
