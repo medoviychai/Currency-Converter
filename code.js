@@ -39,7 +39,9 @@ fromRub.addEventListener('click', () => {
    fromGbp.classList.remove('active-currency')
    fromUsd.classList.remove('active-currency')
 
-   getCurrencyByCheckingClass(toEur, 'RUB', 'EUR')
+   if (toRub.classList[1] == 'active-currency') {
+      inputFrom.value = inputTo.value
+   }
 
    if (toEur.classList[1] == 'active-currency') {
       getCurrentRate('RUB', 'EUR')
@@ -82,6 +84,10 @@ fromUsd.addEventListener('click', () => {
    fromGbp.classList.remove('active-currency')
    fromUsd.classList.add('active-currency')
 
+   if (toUsd.classList[1] == 'active-currency') {
+      inputFrom.value = inputTo.value
+   }
+
    if (toEur.classList[1] == 'active-currency') {
       getCurrentRate('USD', 'EUR')
          .then(res => {
@@ -122,6 +128,10 @@ fromEur.addEventListener('click', () => {
    fromEur.classList.add('active-currency')
    fromGbp.classList.remove('active-currency')
    fromUsd.classList.remove('active-currency')
+
+   if (toEur.classList[1] == 'active-currency') {
+      inputFrom.value = inputTo.value
+   }
 
    if (toRub.classList[1] == 'active-currency') {
       getCurrentRate('EUR', 'RUB')
@@ -164,6 +174,10 @@ fromGbp.addEventListener('click', () => {
    fromGbp.classList.add('active-currency')
    fromUsd.classList.remove('active-currency')
 
+   if (toGbp.classList[1] == 'active-currency') {
+      inputFrom.value = inputTo.value
+   }
+
    if (toRub.classList[1] == 'active-currency') {
       getCurrentRate('GBP', 'RUB')
          .then(res => {
@@ -186,7 +200,7 @@ fromGbp.addEventListener('click', () => {
             unitCostTo.innerHTML = `1 USD = ${res.rates.GBP} GBP`;
          })
    }
-   else if (toGbp.classList[1] == 'active-currency') {
+   else if (toEur.classList[1] == 'active-currency') {
       getCurrentRate('GBP', 'EUR')
          .then(res => {
             unitCostFrom.innerHTML = `1 GBP = ${res.rates.EUR} EUR`;
@@ -204,6 +218,10 @@ toRub.addEventListener('click', () => {
    toGbp.classList.remove('active-currency')
    toUsd.classList.remove('active-currency')
    toRub.classList.add('active-currency')
+
+   if (fromRub.classList[1] == 'active-currency') {
+      inputTo.value = inputFrom.value
+   }
 
    if (fromEur.classList[1] == 'active-currency') {
       getCurrentRate('RUB', 'EUR')
@@ -246,6 +264,10 @@ toUsd.addEventListener('click', () => {
    toUsd.classList.add('active-currency')
    toRub.classList.remove('active-currency')
 
+   if (fromUsd.classList[1] == 'active-currency') {
+      inputTo.value = inputFrom.value
+   }
+
    if (fromEur.classList[1] == 'active-currency') {
       getCurrentRate('EUR', 'USD')
          .then(res => {
@@ -287,6 +309,10 @@ toEur.addEventListener('click', () => {
    toUsd.classList.remove('active-currency')
    toRub.classList.remove('active-currency')
 
+   if (fromEur.classList[1] == 'active-currency') {
+      inputTo.value = inputFrom.value
+   }
+
    if (fromRub.classList[1] == 'active-currency') {
       getCurrentRate('RUB', 'EUR')
          .then(res => {
@@ -327,6 +353,10 @@ toGbp.addEventListener('click', () => {
    toGbp.classList.add('active-currency')
    toUsd.classList.remove('active-currency')
    toRub.classList.remove('active-currency')
+
+   if (fromGbp.classList[1] == 'active-currency') {
+      inputTo.value = inputFrom.value
+   }
 
    if (fromRub.classList[1] == 'active-currency') {
       getCurrentRate('RUB', 'GBP')
@@ -375,6 +405,11 @@ getCurrentRate('USD', 'RUB')
 
 //ИЗМЕНЕНИЕ ПЕРВОГО ИНПУТА
 inputFrom.addEventListener('keyup', (event) => {
+   //РУБЛИ
+   if (fromRub.classList[1] == 'active-currency' && toRub.classList[1] == 'active-currency') {
+      inputTo.value = inputFrom.value
+   }
+
    if (fromRub.classList[1] == 'active-currency' && toUsd.classList[1] == 'active-currency') {
       getCurrentRate('RUB', 'USD')
          .then(res => {
@@ -407,6 +442,10 @@ inputFrom.addEventListener('keyup', (event) => {
          .then(res => {
             unitCostTo.innerHTML = `1 GBP = ${res.rates.RUB} RUB`;
          })
+   }
+   //ДОЛЛАРЫ
+   else if (fromUsd.classList[1] == 'active-currency' && toUsd.classList[1] == 'active-currency') {
+      inputTo.value = inputFrom.value
    }
    else if (fromUsd.classList[1] == 'active-currency' && toRub.classList[1] == 'active-currency') {
       getCurrentRate('USD', 'RUB')
@@ -441,6 +480,9 @@ inputFrom.addEventListener('keyup', (event) => {
             unitCostTo.innerHTML = `1 GBP = ${res.rates.USD} USD`;
          })
    }
+   else if (fromEur.classList[1] == 'active-currency' && toEur.classList[1] == 'active-currency') {
+      inputTo.value = inputFrom.value
+   }
    else if (fromEur.classList[1] == 'active-currency' && toRub.classList[1] == 'active-currency') {
       getCurrentRate('EUR', 'RUB')
          .then(res => {
@@ -473,6 +515,9 @@ inputFrom.addEventListener('keyup', (event) => {
          .then(res => {
             unitCostTo.innerHTML = `1 GBP = ${res.rates.EUR} EUR`;
          })
+   }
+   else if (fromGbp.classList[1] == 'active-currency' && toGbp.classList[1] == 'active-currency') {
+      inputTo.value = inputFrom.value
    }
    else if (fromGbp.classList[1] == 'active-currency' && toRub.classList[1] == 'active-currency') {
       getCurrentRate('GBP', 'RUB')
@@ -511,6 +556,11 @@ inputFrom.addEventListener('keyup', (event) => {
 
 //ИЗМЕНЕНИЕ ВТОРОГО ИНПУТА
 inputTo.addEventListener('keyup', () => {
+   
+   if (fromRub.classList[1] == 'active-currency' && toRub.classList[1] == 'active-currency') {
+      inputFrom.value = inputTo.value
+   }
+
    if (fromRub.classList[1] == 'active-currency' && toUsd.classList[1] == 'active-currency') {
       getCurrentRate('RUB', 'USD')
          .then(res => {
@@ -543,6 +593,9 @@ inputTo.addEventListener('keyup', () => {
          .then(res => {
             unitCostTo.innerHTML = `1 GBP = ${res.rates.RUB} RUB`;
          })
+   }
+   else if (fromUsd.classList[1] == 'active-currency' && toUsd.classList[1] == 'active-currency') {
+      inputFrom.value = inputTo.value
    }
    else if (fromUsd.classList[1] == 'active-currency' && toRub.classList[1] == 'active-currency') {
       getCurrentRate('USD', 'RUB')
@@ -577,6 +630,9 @@ inputTo.addEventListener('keyup', () => {
             unitCostTo.innerHTML = `1 GBP = ${res.rates.USD} USD`;
          })
    }
+   else if (fromEur.classList[1] == 'active-currency' && toEur.classList[1] == 'active-currency') {
+      inputFrom.value = inputTo.value
+   }
    else if (fromEur.classList[1] == 'active-currency' && toRub.classList[1] == 'active-currency') {
       getCurrentRate('EUR', 'RUB')
          .then(res => {
@@ -609,6 +665,9 @@ inputTo.addEventListener('keyup', () => {
          .then(res => {
             unitCostTo.innerHTML = `1 GBP = ${res.rates.EUR} EUR`;
          })
+   }
+   else if (fromGbp.classList[1] == 'active-currency' && toGbp.classList[1] == 'active-currency') {
+      inputFrom.value = inputTo.value
    }
    else if (fromGbp.classList[1] == 'active-currency' && toRub.classList[1] == 'active-currency') {
       getCurrentRate('GBP', 'RUB')
