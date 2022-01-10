@@ -1,14 +1,13 @@
 const getCurrentRate = async (from, to) => {
-   // if (id === 0) {
-   //    throw 'Invalid id';
-   // }
-   
+   try {
    const response = await fetch(`https://api.exchangerate.host/latest?base=${from}&symbols=${to}`);
    const data = await response.json();
    
    return data
+   } catch(err) {
+      alert('Ой, что-то пошло не так')
    }
-    
+}
 
 const fromRub = document.querySelector('.rub');
 const fromUsd = document.querySelector('.usd');
@@ -34,12 +33,13 @@ function validate(){
   inputTo.value = inputTo.value.replace(/[^\.\d]/g, '');
 }
 
-
 fromRub.addEventListener('click', () => {
    fromRub.classList.add('active-currency')
    fromEur.classList.remove('active-currency')
    fromGbp.classList.remove('active-currency')
    fromUsd.classList.remove('active-currency')
+
+   getCurrencyByCheckingClass(toEur, 'RUB', 'EUR')
 
    if (toEur.classList[1] == 'active-currency') {
       getCurrentRate('RUB', 'EUR')

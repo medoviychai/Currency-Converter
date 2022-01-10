@@ -58,6 +58,11 @@ img {
    cursor: pointer;
 }
 
+.sign-in-button:hover {
+   background: #833AE0;
+   color: white;
+}
+
 main {
    padding: 56px 258px 0 253px;
 }
